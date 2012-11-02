@@ -1,0 +1,50 @@
+﻿Level:
+  locators: ['Level1_Resources']
+  collada:
+    scene: 'collada/scene.DAE'
+  scripts:
+    test: 'test.lua'
+  camera:
+    param: { x: -150, y: 50, z: 50, debug: false }
+    physDubug: true
+  containers:
+    BSPContainer: 
+      staticGeometry: [room]
+      staticObjects: [ramp, table]
+      dynamicObjects: [box, bug]
+      zSorting: [ball]
+  models:
+    - model:
+        name: room
+        source: scene
+        param: {}
+        controller: []
+    - model:
+        name: bug
+        source: scene
+        param: {}
+        phys: { type: cube, movable: true }
+        controller: []
+    - model:
+        name: table
+        source: scene
+        param: {} 
+        phys: { type: cube, movable: false }
+        controller: []       
+    - model:
+        name: ramp
+        source: scene
+        param: {}
+        controller: []
+    - model:
+        name: box
+        source: scene
+        param: {}
+        phys: { type: cube, movable: true }
+        controller: []
+    - model:
+        name: ball
+        source: scene
+        param: {}
+        phys: { type: sphere, movable: true }
+        controller: []        
